@@ -1,11 +1,11 @@
 <template>
-   <header class="flex justify-between items-center h-14 shadow bg-white">
+   <header class="flex justify-between items-center h-14 shadow bg-white select-none">
       <button class="p-4">
-         <Bars3Icon class="w-6"/>
+         <Bars3Icon class="w-6" />
       </button>
       <div class="px-4">
 
-         <Menu as="div" class="relative inline-block text-left">
+         <Menu as="div" class="relative inline-block text-left border-none">
             <div>
                <MenuButton class="flex items-center">
                   <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="rounded-full w-12 mr-2">
@@ -35,14 +35,15 @@
                         active ? 'bg-violet-500 text-white' : 'text-gray-900',
                         'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                      ]">
-                        <ArrowRightStartOnRectangleIcon :active="active" class="mr-2 h-5 w-5 text-violet-400" aria-hidden="true" />
+                        <ArrowRightStartOnRectangleIcon :active="active" class="mr-2 h-5 w-5 text-violet-400"
+                           aria-hidden="true" />
                         Logout
                      </button>
                      </MenuItem>
                   </div>
-                 
 
-                  
+
+
                </MenuItems>
             </transition>
          </Menu>
@@ -51,7 +52,7 @@
 </template>
 
 <script setup>
-import { Bars3Icon,ArrowRightStartOnRectangleIcon, UserIcon } from "@heroicons/vue/24/outline"
+import { Bars3Icon, ArrowRightStartOnRectangleIcon, UserIcon } from "@heroicons/vue/24/outline"
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 
