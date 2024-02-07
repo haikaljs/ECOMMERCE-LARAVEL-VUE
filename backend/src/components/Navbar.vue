@@ -31,7 +31,7 @@
                      </button>
                      </MenuItem>
                      <MenuItem v-slot="{ active }">
-                     <button :class="[
+                     <button @click="logout" :class="[
                         active ? 'bg-indigo-600 text-white' : 'text-gray-900',
                         'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                      ]">
@@ -55,7 +55,16 @@
 import { Bars3Icon, ArrowRightStartOnRectangleIcon, UserIcon } from "@heroicons/vue/24/outline"
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+import store from "../store";
+import router from "../router";
 
 const emit = defineEmits(['toggle-sidebar'])
+
+function logout(){
+   store.dispatch('logout')
+   .then(() => {
+      router.push({name: 'login'})
+   })
+}
 
 </script>
