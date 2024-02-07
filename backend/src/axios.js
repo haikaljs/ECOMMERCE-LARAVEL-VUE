@@ -18,7 +18,7 @@ return response
         sessionStorage.removeItem('TOKEN')
         router.push({name: 'login'})
     }
-    console.log(error)
+    throw error;
 })
 
 export default axiosClient

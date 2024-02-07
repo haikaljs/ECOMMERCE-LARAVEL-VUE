@@ -22,6 +22,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import Sidebar from "./Sidebar.vue";
 import Navbar from "./Navbar.vue";
+import store from "../store";
 const { title } = defineProps({
     title: String
 })
@@ -40,6 +41,7 @@ onMounted(() =>{
 })
 
 onUnmounted(() => {
+    store.dispatch('getUser')
     window.removeEventListener('resize', handleSidebarOpened)
 })
 
