@@ -9,7 +9,7 @@
        
                <MenuButton class="flex items-center">
                   <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="rounded-full w-12 mr-2">
-                  <small>Haikal Rozhan</small>
+                  <small class="mr-1">Haikal Rozhan</small>
                   <ChevronDownIcon class="h-5 w-5 text-indigo-200 hover:text-indigo-100" aria-hidden="true" />
                </MenuButton>
          
