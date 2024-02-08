@@ -1,5 +1,5 @@
 <template>
-   <header class="p-4 flex justify-between items-center h-14 shadow bg-white select-none">
+   <header class="p-4 flex justify-between items-center h-14 shadow bg-white">
       <button @click="emit('toggle-sidebar')"  class="flex items-center justify-center w-8 h-8 hover:bg-black/10 rounded transition-colors">
          <Bars3Icon class="w-6" />
       </button>

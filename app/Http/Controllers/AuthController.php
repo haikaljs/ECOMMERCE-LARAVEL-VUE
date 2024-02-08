@@ -43,14 +43,12 @@ class AuthController extends Controller
     }
 
     public function logout(){
-        try{
+     
             $user = Auth::user();
             $user->currentAccessToken()->delete();
     
             return response('', 204);
-        }catch(error){
-            echo error;
-        }
+      
        
     }
 

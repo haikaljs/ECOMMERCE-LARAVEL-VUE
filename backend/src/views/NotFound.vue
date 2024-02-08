@@ -1,6 +1,6 @@
 
 <template>
-    <div class="flex items-center justify-center min-h-full min-w-full select-none">
+    <div class="flex items-center justify-center min-h-full min-w-full">
        <div class="flex">
         <div class="text-indigo-600 text-6xl font-bold px-8 border-r pb-8 ">404</div>
         <div class="px-8">
