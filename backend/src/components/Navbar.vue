@@ -1,3 +1,25 @@
+<script setup>
+import { Bars3Icon, ArrowRightStartOnRectangleIcon, UserIcon } from "@heroicons/vue/24/outline"
+import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
+import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+import store from "../store";
+import router from "../router";
+import {computed} from "vue";
+
+const emit = defineEmits(['toggle-sidebar'])
+
+const currentUser = computed(() => store.state.user.data);
+
+function logout() {
+  store.dispatch('logout')
+    .then(() => {
+      router.push({name: 'login'})
+    })
+}
+
+
+</script>
+
 <template>
    <header class="p-4 flex justify-between items-center h-14 shadow bg-white">
       <button @click="emit('toggle-sidebar')"  class="flex items-center justify-center w-8 h-8 hover:bg-black/10 rounded transition-colors">
@@ -9,7 +31,7 @@
        
                <MenuButton class="flex items-center">
                   <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="rounded-full w-12 mr-2">
-                  <small class="mr-1">Haikal Rozhan</small>
+                  <small class="mr-1">{{ currentUser.name }}</small>
                   <ChevronDownIcon class="h-5 w-5 text-indigo-200 hover:text-indigo-100" aria-hidden="true" />
                </MenuButton>
          
@@ -51,21 +73,3 @@
    </header>
 </template>
 
-<script setup>
-import { Bars3Icon, ArrowRightStartOnRectangleIcon, UserIcon } from "@heroicons/vue/24/outline"
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-import { ChevronDownIcon } from '@heroicons/vue/20/solid'
-import store from "../store";
-import { useRouter } from "vue-router";
-
-const router = useRouter()
-const emit = defineEmits(['toggle-sidebar'])
-
-function logout(){
-   store.dispatch('logout')
-   .then(() => {
-      router.push({name: 'login'})
-   })
-}
-
-</script>
